@@ -3,26 +3,23 @@ import java.util.Random;
 public class MultiArray {
     private int[][] tab;
 
-    public MultiArray(int n , int m) {
-        Random rand = new Random();
-        this.tab = new int[n][m];
 
-        for(int i = 0; i<tab.length; i++){
-           for(int y= 0; y<tab[i].length; y++){
-               this.tab[i][y] = rand.nextInt(100);
-           }
-        }
+
+    public MultiArray(int n , int m) {
+        this.tab = new int[n][m];
+        randomize();
     }
 
     public void randomize(){
-
         Random rand = new Random();
         for(int i = 0; i<tab.length; i++){
             for(int y= 0; y<tab[i].length; y++){
                 this.tab[i][y] = rand.nextInt(100);
             }
         }
+
     }
+
 
     public int findMin(){
         int wynik;
